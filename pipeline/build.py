@@ -25,6 +25,13 @@ def main():
         # commute.commute_for_precinct, amenities.unit_amenities per unit.
         records.append({
             "unit_id": unit_id,
+            "unit_type": feature["properties"]["unit_type"],
+            "levels": feature["properties"]["levels"],
+            "height_m": feature["properties"]["height_m"],
+            "front_orientation_deg": feature["properties"]["front_orientation_deg"],
+            "price_rm": feature["properties"]["price_rm"],
+            "row": feature["properties"]["row"],
+            "geometry": feature["geometry"],
             "sun": {
                 "facade_sun_hours": sun_result["facade_sun_hours"],
                 "roof_sun_hours": sun_result["roof_sun_hours"],
