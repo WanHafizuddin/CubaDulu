@@ -11,7 +11,7 @@ DATA_PATH = Path(__file__).parent.parent.parent / "data" / "processed" / "units_
 def _load_units() -> list[dict]:
     if not DATA_PATH.exists():
         return []
-    return json.loads(DATA_PATH.read_text())
+    return json.loads(DATA_PATH.read_text(encoding="utf-8"))
 
 
 @router.get("")

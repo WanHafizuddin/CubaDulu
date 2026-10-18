@@ -19,6 +19,12 @@ export type UnitRecord = {
     hourly_sunlit: Record<string, string[]>;
     indicative: boolean;
   };
+  noise: {
+    hourly_db: Record<string, number>;
+    rating: string;
+    dominant_source: string | null;
+    indicative: boolean;
+  };
 };
 
 export async function fetchUnits(): Promise<UnitRecord[]> {

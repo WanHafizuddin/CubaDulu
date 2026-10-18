@@ -7,6 +7,12 @@ const HEAT_STYLES: Record<string, string> = {
   High: "bg-red-100 text-red-800",
 };
 
+const NOISE_STYLES: Record<string, string> = {
+  Quiet: "bg-green-100 text-green-800",
+  Moderate: "bg-yellow-100 text-yellow-800",
+  Noisy: "bg-red-100 text-red-800",
+};
+
 function ComingSoon({ label }: { label: string }) {
   return (
     <div className="flex items-center justify-between text-sm text-gray-400">
@@ -31,7 +37,7 @@ export default function LivabilityCard({ unitId }: { unitId: string }) {
   if (error) return <div className="border rounded p-4 text-red-600 text-sm">{error}</div>;
   if (!unit) return <div className="border rounded p-4 text-sm text-gray-400">Loading…</div>;
 
-  const { sun } = unit;
+  const { sun, noise } = unit;
   const facades = ["N", "E", "S", "W"] as const;
 
   return (
@@ -66,8 +72,22 @@ export default function LivabilityCard({ unitId }: { unitId: string }) {
         </div>
       </div>
 
+      <div>
+        <div className="flex items-center justify-between">
+          <span className="text-sm font-medium">Noise</span>
+          <span className={`text-xs px-2 py-0.5 rounded-full ${NOISE_STYLES[noise.rating] ?? "bg-gray-100 text-gray-600"}`}>
+            {noise.rating}
+          </span>
+        </div>
+        <p className="text-xs text-gray-500 mt-1">
+          {noise.hourly_db["08"]}dB (8am) / {noise.hourly_db["14"]}dB (2pm) / {noise.hourly_db["23"]}dB (11pm) · indicative estimate
+        </p>
+        {noise.dominant_source && (
+          <p className="text-xs text-gray-400 mt-0.5">Dominant source: {noise.dominant_source}</p>
+        )}
+      </div>
+
       <div className="flex flex-col gap-1 pt-2 border-t">
-        <ComingSoon label="Noise" />
         <ComingSoon label="Commute" />
         <ComingSoon label="Flood" />
         <ComingSoon label="Amenities" />

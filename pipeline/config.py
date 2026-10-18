@@ -40,6 +40,15 @@ ROAD_BASE_DB = {
 }
 REFERENCE_DISTANCE_M = 10
 BARRIER_ATTENUATION_DB = 7
+# Roads just outside PRECINCT_BBOX (e.g. the main road the precinct backs onto) still
+# contribute noise, so fetch_osm.fetch_roads() is queried over this wider box instead.
+NOISE_ROAD_SEARCH_BUFFER_DEG = 0.004  # ~450m
+NOISE_ROAD_SEARCH_BBOX = (
+    PRECINCT_BBOX[0] - NOISE_ROAD_SEARCH_BUFFER_DEG,
+    PRECINCT_BBOX[1] - NOISE_ROAD_SEARCH_BUFFER_DEG,
+    PRECINCT_BBOX[2] + NOISE_ROAD_SEARCH_BUFFER_DEG,
+    PRECINCT_BBOX[3] + NOISE_ROAD_SEARCH_BUFFER_DEG,
+)
 TRAFFIC_PROFILE = {  # multiplier added to base dB by hour-of-day bucket
     "peak": 3,      # 07-09, 17-20
     "normal": 0,

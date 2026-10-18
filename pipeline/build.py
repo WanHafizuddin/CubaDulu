@@ -10,9 +10,10 @@ OUTPUT_PATH = Path(__file__).parent.parent / "data" / "processed" / "units_livab
 
 
 def main():
-    precinct = json.loads(PRECINCT_PATH.read_text())
+    precinct = json.loads(PRECINCT_PATH.read_text(encoding="utf-8"))
     scene = sun.build_scene(precinct)
     equinox = date.fromisoformat(config.SUN_REFERENCE_DATES["equinox"])
+    roads = fetch_osm.fetch_roads(config.NOISE_ROAD_SEARCH_BBOX)
 
     records = []
     for feature in precinct["features"]:
@@ -20,9 +21,10 @@ def main():
 
         sun_result = sun.facade_sun_hours(unit_id, scene, feature, equinox)
         afternoon_hours = sun_result["west_afternoon_sun_hours"]
+        noise_result = noise.hourly_db_for_unit(feature, roads, precinct)
 
-        # TODO: wire up noise.hourly_db_for_unit, flood.unit_flood_profile,
-        # commute.commute_for_precinct, amenities.unit_amenities per unit.
+        # TODO: wire up flood.unit_flood_profile, commute.commute_for_precinct,
+        # amenities.unit_amenities per unit.
         records.append({
             "unit_id": unit_id,
             "unit_type": feature["properties"]["unit_type"],
@@ -40,10 +42,11 @@ def main():
                 "hourly_sunlit": sun_result["hourly_sunlit"],
                 "indicative": True,
             },
+            "noise": noise_result,
         })
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_PATH.write_text(json.dumps(records, indent=2))
+    OUTPUT_PATH.write_text(json.dumps(records, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {len(records)} units to {OUTPUT_PATH}")
 
 

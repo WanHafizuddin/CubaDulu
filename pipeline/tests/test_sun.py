@@ -11,7 +11,7 @@ PRECINCT_PATH = Path(__file__).parent.parent.parent / "data" / "precinct.geojson
 
 @pytest.fixture(scope="module")
 def precinct():
-    return json.loads(PRECINCT_PATH.read_text())
+    return json.loads(PRECINCT_PATH.read_text(encoding="utf-8"))
 
 
 @pytest.fixture(scope="module")

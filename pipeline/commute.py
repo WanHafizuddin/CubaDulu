@@ -10,13 +10,13 @@ CACHE_PATH = Path(__file__).parent.parent / "data" / "raw" / "commute_cache.json
 
 def _load_cache() -> dict:
     if CACHE_PATH.exists():
-        return json.loads(CACHE_PATH.read_text())
+        return json.loads(CACHE_PATH.read_text(encoding="utf-8"))
     return {}
 
 
 def _save_cache(cache: dict) -> None:
     CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    CACHE_PATH.write_text(json.dumps(cache, indent=2))
+    CACHE_PATH.write_text(json.dumps(cache, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def route_minutes(origin: tuple[float, float], destination: str, departure: str) -> float:
