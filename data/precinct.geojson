@@ -1,4 +1,825 @@
 {
   "type": "FeatureCollection",
-  "features": []
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-01",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 620000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 1,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7024532,
+              2.8444448
+            ],
+            [
+              101.7025311,
+              2.8444589
+            ],
+            [
+              101.7025749,
+              2.8442178
+            ],
+            [
+              101.702497,
+              2.8442037
+            ],
+            [
+              101.7024532,
+              2.8444448
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-03",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 625000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 3,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7025311,
+              2.8444589
+            ],
+            [
+              101.702609,
+              2.844473
+            ],
+            [
+              101.7026527,
+              2.8442319
+            ],
+            [
+              101.7025749,
+              2.8442178
+            ],
+            [
+              101.7025311,
+              2.8444589
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-05",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 630000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 5,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.702609,
+              2.844473
+            ],
+            [
+              101.7026868,
+              2.8444871
+            ],
+            [
+              101.7027306,
+              2.844246
+            ],
+            [
+              101.7026527,
+              2.8442319
+            ],
+            [
+              101.702609,
+              2.844473
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-07",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 635000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 7,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7026868,
+              2.8444871
+            ],
+            [
+              101.7027647,
+              2.8445012
+            ],
+            [
+              101.7028085,
+              2.8442601
+            ],
+            [
+              101.7027306,
+              2.844246
+            ],
+            [
+              101.7026868,
+              2.8444871
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-09",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 640000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 9,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7027647,
+              2.8445012
+            ],
+            [
+              101.7028426,
+              2.8445153
+            ],
+            [
+              101.7028863,
+              2.8442742
+            ],
+            [
+              101.7028085,
+              2.8442601
+            ],
+            [
+              101.7027647,
+              2.8445012
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-11",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 645000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 11,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7028426,
+              2.8445153
+            ],
+            [
+              101.7029204,
+              2.8445294
+            ],
+            [
+              101.7029642,
+              2.8442882
+            ],
+            [
+              101.7028863,
+              2.8442742
+            ],
+            [
+              101.7028426,
+              2.8445153
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-13",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 650000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 13,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7029204,
+              2.8445294
+            ],
+            [
+              101.7029983,
+              2.8445435
+            ],
+            [
+              101.703042,
+              2.8443023
+            ],
+            [
+              101.7029642,
+              2.8442882
+            ],
+            [
+              101.7029204,
+              2.8445294
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-15",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 655000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 15,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7029983,
+              2.8445435
+            ],
+            [
+              101.7030761,
+              2.8445576
+            ],
+            [
+              101.7031199,
+              2.8443164
+            ],
+            [
+              101.703042,
+              2.8443023
+            ],
+            [
+              101.7029983,
+              2.8445435
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-17",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 660000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 17,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7030761,
+              2.8445576
+            ],
+            [
+              101.703154,
+              2.8445717
+            ],
+            [
+              101.7031978,
+              2.8443305
+            ],
+            [
+              101.7031199,
+              2.8443164
+            ],
+            [
+              101.7030761,
+              2.8445576
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-19",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 665000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 19,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.703154,
+              2.8445717
+            ],
+            [
+              101.7032319,
+              2.8445858
+            ],
+            [
+              101.7032756,
+              2.8443446
+            ],
+            [
+              101.7031978,
+              2.8443305
+            ],
+            [
+              101.703154,
+              2.8445717
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-21",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 670000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 21,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7032319,
+              2.8445858
+            ],
+            [
+              101.7033097,
+              2.8445999
+            ],
+            [
+              101.7033535,
+              2.8443587
+            ],
+            [
+              101.7032756,
+              2.8443446
+            ],
+            [
+              101.7032319,
+              2.8445858
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-23",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 675000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 23,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7033097,
+              2.8445999
+            ],
+            [
+              101.7033876,
+              2.844614
+            ],
+            [
+              101.7034313,
+              2.8443728
+            ],
+            [
+              101.7033535,
+              2.8443587
+            ],
+            [
+              101.7033097,
+              2.8445999
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "A-25",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 349.7,
+        "price_rm": 680000,
+        "row": "Jalan Aman Serenia 17/9",
+        "addr_housenumber": 25,
+        "source": "osm_traced"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7033876,
+              2.844614
+            ],
+            [
+              101.7034654,
+              2.8446281
+            ],
+            [
+              101.7035092,
+              2.8443869
+            ],
+            [
+              101.7034313,
+              2.8443728
+            ],
+            [
+              101.7033876,
+              2.844614
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "B-01",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 169.7,
+        "price_rm": 580000,
+        "row": "Jalan Aman Serenia 17/8",
+        "addr_housenumber": 1,
+        "source": "mocked_mirrored_from_osm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.70262833432383,
+              2.8439236672266848
+            ],
+            [
+              101.70255043432383,
+              2.843909567226685
+            ],
+            [
+              101.70250663432383,
+              2.844150667226685
+            ],
+            [
+              101.70258453432383,
+              2.844164767226685
+            ],
+            [
+              101.70262833432383,
+              2.8439236672266848
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "B-03",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 169.7,
+        "price_rm": 584000,
+        "row": "Jalan Aman Serenia 17/8",
+        "addr_housenumber": 3,
+        "source": "mocked_mirrored_from_osm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7027061843238,
+              2.843937767226665
+            ],
+            [
+              101.70262828432381,
+              2.843923667226665
+            ],
+            [
+              101.7025845843238,
+              2.8441647672266646
+            ],
+            [
+              101.7026623843238,
+              2.8441788672266646
+            ],
+            [
+              101.7027061843238,
+              2.843937767226665
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "B-05",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 169.7,
+        "price_rm": 588000,
+        "row": "Jalan Aman Serenia 17/8",
+        "addr_housenumber": 5,
+        "source": "mocked_mirrored_from_osm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.70278386302641,
+              2.8439518633715313
+            ],
+            [
+              101.70270606302641,
+              2.8439377633715313
+            ],
+            [
+              101.70266226302641,
+              2.844178863371531
+            ],
+            [
+              101.7027401630264,
+              2.844192963371531
+            ],
+            [
+              101.70278386302641,
+              2.8439518633715313
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "B-07",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 169.7,
+        "price_rm": 592000,
+        "row": "Jalan Aman Serenia 17/8",
+        "addr_housenumber": 7,
+        "source": "mocked_mirrored_from_osm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.70286193432383,
+              2.8439659672266235
+            ],
+            [
+              101.70278403432383,
+              2.8439518672266235
+            ],
+            [
+              101.70274023432383,
+              2.8441929672266233
+            ],
+            [
+              101.70281813432383,
+              2.8442070672266233
+            ],
+            [
+              101.70286193432383,
+              2.8439659672266235
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "B-09",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 169.7,
+        "price_rm": 596000,
+        "row": "Jalan Aman Serenia 17/8",
+        "addr_housenumber": 9,
+        "source": "mocked_mirrored_from_osm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.70293978432385,
+              2.843980067226603
+            ],
+            [
+              101.70286188432385,
+              2.843965967226603
+            ],
+            [
+              101.70281818432385,
+              2.844207067226603
+            ],
+            [
+              101.70289598432385,
+              2.844221167226603
+            ],
+            [
+              101.70293978432385,
+              2.843980067226603
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "B-11",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 169.7,
+        "price_rm": 600000,
+        "row": "Jalan Aman Serenia 17/8",
+        "addr_housenumber": 11,
+        "source": "mocked_mirrored_from_osm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.7030174630264,
+              2.84399411337147
+            ],
+            [
+              101.7029396630264,
+              2.84398001337147
+            ],
+            [
+              101.7028958630264,
+              2.84422121337147
+            ],
+            [
+              101.70297376302639,
+              2.8442352133714697
+            ],
+            [
+              101.7030174630264,
+              2.84399411337147
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "unit_id": "B-13",
+        "unit_type": "terrace",
+        "levels": 2,
+        "height_m": 7.5,
+        "front_orientation_deg": 169.7,
+        "price_rm": 604000,
+        "row": "Jalan Aman Serenia 17/8",
+        "addr_housenumber": 13,
+        "source": "mocked_mirrored_from_osm"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              101.70309548045674,
+              2.844008066525911
+            ],
+            [
+              101.70301758045673,
+              2.843993966525911
+            ],
+            [
+              101.70297388045674,
+              2.844235166525911
+            ],
+            [
+              101.70305168045674,
+              2.844249266525911
+            ],
+            [
+              101.70309548045674,
+              2.844008066525911
+            ]
+          ]
+        ]
+      }
+    }
+  ]
 }
