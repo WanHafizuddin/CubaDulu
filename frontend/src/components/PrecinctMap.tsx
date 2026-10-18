@@ -5,12 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { fetchUnits, type Polygon, type UnitRecord } from "../lib/api";
 import { PRECINCT_ORIGIN_LONLAT } from "../lib/geo";
 
-type Factor = "heat" | "noise" | "flood";
+type Factor = "heat" | "noise";
 
 const FACTORS: { id: Factor; label: string; available: boolean }[] = [
   { id: "heat", label: "Heat", available: true },
   { id: "noise", label: "Noise", available: false },
-  { id: "flood", label: "Flood", available: false },
 ];
 
 const HEAT_COLORS: Record<string, string> = {

@@ -3,7 +3,7 @@ import json
 from datetime import date
 from pathlib import Path
 
-from . import amenities, commute, config, fetch_osm, flood, noise, sun
+from . import amenities, commute, config, fetch_osm, noise, sun
 
 PRECINCT_PATH = Path(__file__).parent.parent / "data" / "precinct.geojson"
 OUTPUT_PATH = Path(__file__).parent.parent / "data" / "processed" / "units_livability.json"
@@ -23,8 +23,7 @@ def main():
         afternoon_hours = sun_result["west_afternoon_sun_hours"]
         noise_result = noise.hourly_db_for_unit(feature, roads, precinct)
 
-        # TODO: wire up flood.unit_flood_profile, commute.commute_for_precinct,
-        # amenities.unit_amenities per unit.
+        # TODO: wire up commute.commute_for_precinct, amenities.unit_amenities per unit.
         records.append({
             "unit_id": unit_id,
             "unit_type": feature["properties"]["unit_type"],

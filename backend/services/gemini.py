@@ -12,7 +12,7 @@ _MODEL = "gemini-2.0-flash"
 def extract_weights(description: str) -> dict:
     """Free-text life description -> strict JSON scoring weights."""
     # TODO: prompt Gemini for heat_sensitivity, noise_sensitivity, commute_importance,
-    # commute_destinations, school_importance, flood_concern, budget_max_rm (0-1 each)
+    # commute_destinations, school_importance, budget_max_rm (0-1 each)
     raise NotImplementedError
 
 

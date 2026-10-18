@@ -60,14 +60,6 @@ NOISE_RATING_THRESHOLDS = {
     # >= Moderate threshold -> "Noisy"
 }
 
-# --- Flood (flood.py) ---
-RELATIVE_ELEVATION_RADIUS_M = 300
-FLOOD_RATING_THRESHOLDS = {
-    "Low": {"min_relative_elevation_m": 1.5, "min_waterway_dist_m": 200},
-    "Medium": {"min_relative_elevation_m": 0.5, "min_waterway_dist_m": 50},
-    # below Medium thresholds -> "High"
-}
-
 # --- Commute (commute.py) ---
 COMMUTE_DEPARTURE_AM = "08:00"
 COMMUTE_DEPARTURE_PM = "18:00"

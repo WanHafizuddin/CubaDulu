@@ -36,7 +36,7 @@ npm run dev
 
 ```
 data/           hand-traced precinct.geojson, raw OSM/DEM extracts, processed output
-pipeline/       Python data prep (sun, noise, flood, commute, amenities) -> data/processed/units_livability.json
+pipeline/       Python data prep (sun, noise, commute, amenities) -> data/processed/units_livability.json
 backend/        FastAPI: units/match/chat/commute endpoints, Gemini + scoring services
 frontend/       React + Vite + Tailwind: map, unit view, compare, match pages
 ```

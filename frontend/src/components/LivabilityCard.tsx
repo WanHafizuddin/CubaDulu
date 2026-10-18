@@ -89,7 +89,6 @@ export default function LivabilityCard({ unitId }: { unitId: string }) {
 
       <div className="flex flex-col gap-1 pt-2 border-t">
         <ComingSoon label="Commute" />
-        <ComingSoon label="Flood" />
         <ComingSoon label="Amenities" />
       </div>
     </div>

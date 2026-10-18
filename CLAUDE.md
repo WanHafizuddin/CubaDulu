@@ -13,14 +13,14 @@ AI: Gemini API for life-fit matching and ask-the-unit chat.
 
 ## Data flow
 
-`data/precinct.geojson` (hand-traced unit footprints) -> `pipeline/build.py` runs sun/noise/flood/commute/amenities -> `data/processed/units_livability.json` (one record per unit) -> backend serves it, frontend renders it.
+`data/precinct.geojson` (hand-traced unit footprints) -> `pipeline/build.py` runs sun/noise/commute/amenities -> `data/processed/units_livability.json` (one record per unit) -> backend serves it, frontend renders it.
 
 Record shape and full factor table are in the hackathon handoff doc; `pipeline/build.py` has a TODO marking where each module's output plugs into the record.
 
 ## Conventions
 
 - Python: type hints, small pure functions. Every tunable threshold lives in `pipeline/config.py`, never hardcoded inline.
-- Every modelled output (noise, flood, heat rating) carries `"indicative": true` and must be labelled as an estimate in the UI. Never state these as fact.
+- Every modelled output (noise, heat rating) carries `"indicative": true` and must be labelled as an estimate in the UI. Never state these as fact.
 - Never commit API keys — `.env` only, keep `.env.example` in sync.
 - Cache every paid API call to disk (commute -> `data/raw/commute_cache.json`). Never call Google Routes per-unit or per-request — once per precinct centroid per destination.
 - Gemini chat/match responses must only cite numbers present in the unit's own data record. No invented numbers.
@@ -38,4 +38,4 @@ Record shape and full factor table are in the hackathon handoff doc; `pipeline/b
 
 ## Current state
 
-Scaffold only — routers, services and pipeline modules are stubs with `TODO`/`NotImplementedError` markers. Milestone order (see handoff doc §11): geocode + pick precinct, trace `precinct.geojson`, sun model + shadow slider (most visual, do early), map, Gemini match/chat, commute, noise, flood, polish.
+Sun model, noise model, shadow slider, precinct map, Livability Card and Compare page are built and verified live. Still stubs: Gemini match/chat, commute, amenities. Flood is out of scope — dropped from the handoff doc's "nice to have" list.
