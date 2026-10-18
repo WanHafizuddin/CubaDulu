@@ -37,7 +37,7 @@ export default function LivabilityCard({ unitId }: { unitId: string }) {
   if (error) return <div className="border rounded p-4 text-red-600 text-sm">{error}</div>;
   if (!unit) return <div className="border rounded p-4 text-sm text-gray-400">Loading…</div>;
 
-  const { sun, noise } = unit;
+  const { sun, noise, commute } = unit;
   const facades = ["N", "E", "S", "W"] as const;
 
   return (
@@ -87,8 +87,20 @@ export default function LivabilityCard({ unitId }: { unitId: string }) {
         )}
       </div>
 
+      <div>
+        <span className="text-sm font-medium">Commute</span>
+        <div className="grid grid-cols-2 gap-2 mt-2 text-sm">
+          {Object.entries(commute.destinations).map(([name, times]) => (
+            <div key={name} className="bg-gray-50 rounded px-2 py-1">
+              <div className="text-xs text-gray-400">{name}</div>
+              <div className="font-medium">{times.am_min} min</div>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-gray-400 mt-1">No live traffic data · same estimate any time of day</p>
+      </div>
+
       <div className="flex flex-col gap-1 pt-2 border-t">
-        <ComingSoon label="Commute" />
         <ComingSoon label="Amenities" />
       </div>
     </div>

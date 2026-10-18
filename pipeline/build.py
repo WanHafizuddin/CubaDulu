@@ -14,6 +14,8 @@ def main():
     scene = sun.build_scene(precinct)
     equinox = date.fromisoformat(config.SUN_REFERENCE_DATES["equinox"])
     roads = fetch_osm.fetch_roads(config.NOISE_ROAD_SEARCH_BBOX)
+    origin_lon, origin_lat = config.PRECINCT_ORIGIN_LONLAT
+    commute_times = commute.commute_for_precinct((origin_lat, origin_lon))
 
     records = []
     for feature in precinct["features"]:
@@ -23,7 +25,7 @@ def main():
         afternoon_hours = sun_result["west_afternoon_sun_hours"]
         noise_result = noise.hourly_db_for_unit(feature, roads, precinct)
 
-        # TODO: wire up commute.commute_for_precinct, amenities.unit_amenities per unit.
+        # TODO: wire up amenities.unit_amenities per unit.
         records.append({
             "unit_id": unit_id,
             "unit_type": feature["properties"]["unit_type"],
@@ -42,6 +44,7 @@ def main():
                 "indicative": True,
             },
             "noise": noise_result,
+            "commute": {"destinations": commute_times},
         })
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

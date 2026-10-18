@@ -25,6 +25,9 @@ export type UnitRecord = {
     dominant_source: string | null;
     indicative: boolean;
   };
+  commute: {
+    destinations: Record<string, { am_min: number; pm_min: number }>;
+  };
 };
 
 export async function fetchUnits(): Promise<UnitRecord[]> {
