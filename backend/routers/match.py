@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from services import scoring
@@ -12,4 +12,7 @@ class MatchRequest(BaseModel):
 
 @router.post("")
 def match_units(req: MatchRequest):
-    return scoring.match(req.description)
+    try:
+        return scoring.match(req.description)
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e)) from e

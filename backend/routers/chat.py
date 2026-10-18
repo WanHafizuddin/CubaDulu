@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from services import gemini
@@ -18,4 +18,8 @@ class ChatRequest(BaseModel):
 
 @router.post("/{unit_id}/chat")
 def chat_with_unit(unit_id: str, req: ChatRequest):
-    return gemini.ask_the_unit(unit_id, req.message, req.history)
+    history = [m.model_dump() for m in req.history]
+    try:
+        return gemini.ask_the_unit(unit_id, req.message, history)
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e)) from e

@@ -42,3 +42,40 @@ export async function fetchUnit(unitId: string): Promise<UnitRecord> {
   if (!res.ok) throw new Error(`GET /units/${unitId} failed: ${res.status}`);
   return res.json();
 }
+
+export type MatchResult = {
+  weights: Record<string, unknown>;
+  results: { unit_id: string; explanation: string }[];
+};
+
+async function parseJsonOrThrow(res: Response, label: string) {
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.detail ?? `${label} failed: ${res.status}`);
+  }
+  return res.json();
+}
+
+export async function matchUnits(description: string): Promise<MatchResult> {
+  const res = await fetch(`${API_BASE_URL}/match`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ description }),
+  });
+  return parseJsonOrThrow(res, "POST /match");
+}
+
+export type ChatMessage = { role: "user" | "assistant"; content: string };
+
+export async function chatWithUnit(
+  unitId: string,
+  message: string,
+  history: ChatMessage[],
+): Promise<{ answer: string }> {
+  const res = await fetch(`${API_BASE_URL}/units/${unitId}/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message, history }),
+  });
+  return parseJsonOrThrow(res, `POST /units/${unitId}/chat`);
+}
