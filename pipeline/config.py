@@ -2,6 +2,10 @@
 
 TIMEZONE = "Asia/Kuala_Lumpur"
 
+# Precinct: Jalan Aman Serenia 17/9 + 17/8, Serenia Anisa, Bandar Serenia (Serenia City),
+# Dengkil, Sepang. Geocoded via OSM Nominatim — see data/raw/location_notes.md.
+PRECINCT_BBOX = (101.7015, 2.8436, 101.7042, 2.8450)  # (lon_min, lat_min, lon_max, lat_max)
+
 # --- Sun / heat (sun.py) ---
 FACADE_DIRECTIONS = ["N", "E", "S", "W"]
 SUN_HOURS_START = 7

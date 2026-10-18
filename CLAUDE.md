@@ -1,6 +1,6 @@
 # Live Here Before You Buy
 
-Web app that shows home buyers what daily life in a specific unit feels like before they buy, and matches them to the unit that fits their life. Sime Darby Property University Hackathon — "Township of Tomorrow". Target: Serenia City, Sepang, one precinct of ~20 mocked units next to a main road.
+Web app that shows home buyers what daily life in a specific unit feels like before they buy, and matches them to the unit that fits their life. Sime Darby Property University Hackathon — "Township of Tomorrow". Target: Serenia City, Sepang — precinct = Jalan Aman Serenia 17/9 + 17/8 (Serenia Anisa neighbourhood), ~20 mocked units, 17/9 fronting the Persiaran Bandar Serenia main road/roundabout. See `data/raw/location_notes.md` for the geocoding and precinct bbox.
 
 Out of scope for the hackathon: real SDP data, auth, payments, mobile app.
 

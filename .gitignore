@@ -17,6 +17,7 @@ dist-ssr/
 # data
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/location_notes.md
 data/processed/*
 !data/processed/.gitkeep
 
