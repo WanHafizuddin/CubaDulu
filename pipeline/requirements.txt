@@ -1,12 +1,11 @@
 osmnx
-overpy
+networkx
+scikit-learn
 pvlib
 trimesh
 mapbox-earcut
 rtree
 shapely
-geopandas
-rasterio
 numpy
 python-dotenv
 pytest

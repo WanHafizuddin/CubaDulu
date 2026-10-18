@@ -28,6 +28,7 @@ export type UnitRecord = {
   commute: {
     destinations: Record<string, { am_min: number; pm_min: number }>;
   };
+  amenities: Record<string, { name: string | null; walk_min: number }>;
 };
 
 export async function fetchUnits(): Promise<UnitRecord[]> {

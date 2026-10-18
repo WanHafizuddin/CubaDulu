@@ -13,14 +13,13 @@ const NOISE_STYLES: Record<string, string> = {
   Noisy: "bg-red-100 text-red-800",
 };
 
-function ComingSoon({ label }: { label: string }) {
-  return (
-    <div className="flex items-center justify-between text-sm text-gray-400">
-      <span>{label}</span>
-      <span className="italic">not modelled yet</span>
-    </div>
-  );
-}
+const AMENITY_LABELS: Record<string, string> = {
+  school: "School",
+  clinic: "Clinic",
+  mosque: "Mosque",
+  supermarket: "Supermarket",
+  park: "Park",
+};
 
 export default function LivabilityCard({ unitId }: { unitId: string }) {
   const [unit, setUnit] = useState<UnitRecord | null>(null);
@@ -37,7 +36,7 @@ export default function LivabilityCard({ unitId }: { unitId: string }) {
   if (error) return <div className="border rounded p-4 text-red-600 text-sm">{error}</div>;
   if (!unit) return <div className="border rounded p-4 text-sm text-gray-400">Loading…</div>;
 
-  const { sun, noise, commute } = unit;
+  const { sun, noise, commute, amenities } = unit;
   const facades = ["N", "E", "S", "W"] as const;
 
   return (
@@ -100,8 +99,22 @@ export default function LivabilityCard({ unitId }: { unitId: string }) {
         <p className="text-xs text-gray-400 mt-1">No live traffic data · same estimate any time of day</p>
       </div>
 
-      <div className="flex flex-col gap-1 pt-2 border-t">
-        <ComingSoon label="Amenities" />
+      <div className="pt-2 border-t">
+        <span className="text-sm font-medium">Amenities (walking)</span>
+        <div className="flex flex-col gap-1 mt-1">
+          {Object.entries(amenities).map(([type, info]) => (
+            <div key={type} className="flex items-center justify-between text-sm">
+              <span className="text-gray-600">
+                {AMENITY_LABELS[type] ?? type}
+                {info.name && <span className="text-gray-400"> · {info.name}</span>}
+              </span>
+              <span className="font-medium">{info.walk_min} min</span>
+            </div>
+          ))}
+          {Object.keys(amenities).length === 0 && (
+            <p className="text-sm text-gray-400">None found within range</p>
+          )}
+        </div>
       </div>
     </div>
   );

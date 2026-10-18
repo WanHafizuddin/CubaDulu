@@ -57,9 +57,67 @@ def fetch_waterways(bbox: tuple[float, float, float, float]) -> dict:
     raise NotImplementedError
 
 
-def fetch_amenities(bbox: tuple[float, float, float, float]) -> dict:
-    # TODO: Overpass query for amenity=school|clinic|place_of_worship|supermarket, leisure=park
-    raise NotImplementedError
+_AMENITY_FILTERS: dict[str, str] = {
+    "school": '["amenity"="school"]',
+    "clinic": '["amenity"~"^(clinic|hospital)$"]',
+    "mosque": '["amenity"="place_of_worship"]["religion"="muslim"]',
+    "supermarket": '["shop"="supermarket"]',
+    "park": '["leisure"="park"]',
+}
+
+
+def fetch_amenities(center_lonlat: tuple[float, float], radius_m: float, cache_path: Path | None = None) -> dict:
+    """Schools, clinics, mosques, supermarkets and parks within radius_m of the precinct centroid."""
+    cache_path = cache_path or (RAW_DIR / "amenities.geojson")
+    if cache_path.exists():
+        return json.loads(cache_path.read_text(encoding="utf-8"))
+
+    lon, lat = center_lonlat
+    clauses = "".join(
+        f'node{f}(around:{radius_m},{lat},{lon});way{f}(around:{radius_m},{lat},{lon});'
+        for f in _AMENITY_FILTERS.values()
+    )
+    query = f"[out:json];({clauses});out center;"
+    raw = _overpass(query)
+
+    features = []
+    for el in raw["elements"]:
+        tags = el.get("tags", {})
+        if el["type"] == "node":
+            pt_lon, pt_lat = el["lon"], el["lat"]
+        elif "center" in el:
+            pt_lon, pt_lat = el["center"]["lon"], el["center"]["lat"]
+        else:
+            continue
+
+        amenity_type = None
+        if tags.get("amenity") == "school":
+            amenity_type = "school"
+        elif tags.get("amenity") in ("clinic", "hospital"):
+            amenity_type = "clinic"
+        elif tags.get("amenity") == "place_of_worship" and tags.get("religion") == "muslim":
+            amenity_type = "mosque"
+        elif tags.get("shop") == "supermarket":
+            amenity_type = "supermarket"
+        elif tags.get("leisure") == "park":
+            amenity_type = "park"
+        if amenity_type is None:
+            continue
+
+        features.append({
+            "type": "Feature",
+            "properties": {
+                "amenity_type": amenity_type,
+                "name": tags.get("name"),
+                "osm_id": el["id"],
+            },
+            "geometry": {"type": "Point", "coordinates": [pt_lon, pt_lat]},
+        })
+
+    fc = {"type": "FeatureCollection", "features": features}
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(fc, indent=2, ensure_ascii=False), encoding="utf-8")
+    return fc
 
 
 if __name__ == "__main__":
