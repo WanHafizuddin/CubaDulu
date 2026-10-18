@@ -1,0 +1,10 @@
+osmnx
+overpy
+pvlib
+trimesh
+shapely
+geopandas
+rasterio
+numpy
+python-dotenv
+pytest
